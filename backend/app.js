@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors"
+import { dbConnection } from "./database/dbConnection.js";
 
 
 const app = express()
@@ -13,5 +14,6 @@ app.use(cors({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
+dbConnection();
 
 export default app;
